@@ -23,6 +23,7 @@ class ProfileResource extends Resource
             Forms\Components\TextInput::make('name')->required(),
             Forms\Components\TextInput::make('title')->required(),
             Forms\Components\Textarea::make('description')->rows(4)->required(),
+            Forms\Components\FileUpload::make('image')->image()->directory('profile')->label('Profile / Hero Image'),
             Forms\Components\TextInput::make('email'),
             Forms\Components\TextInput::make('phone'),
             Forms\Components\TextInput::make('location'),

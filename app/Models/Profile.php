@@ -13,6 +13,7 @@ class Profile extends Model
         'name',
         'title',
         'description',
+        'image',
         'email',
         'phone',
         'location',

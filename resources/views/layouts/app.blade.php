@@ -9,6 +9,16 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="{{ asset('css/index.css') }}">
+    <style>
+        :root {
+            --primary: {{ $settings->primary_color ?? '#56DFCF' }};
+            --secondary: {{ $settings->secondary_color ?? '#FDFAF6' }};
+            --dark: {{ $settings->dark_color ?? '#1a1a1a' }};
+            --gray: {{ $settings->gray_color ?? '#666' }};
+            --light-gray: {{ $settings->light_gray_color ?? '#f5f5f5' }};
+        }
+    </style>
+
 </head>
 
 <body>

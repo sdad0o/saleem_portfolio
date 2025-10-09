@@ -42,7 +42,7 @@
             </div>
 
             <div class="contact-form">
-                <form action="#" method="POST">
+                <form action="#" method="POST" id="contactForm">
                     @csrf
                     <div class="form-group">
                         <label for="name">Full Name</label>
@@ -65,3 +65,22 @@
             </div>
         </div>
     </section>
+    <script>
+document.getElementById('contactForm').addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    // Replace with your WhatsApp number (use international format, no + or leading zeros)
+    const phoneNumber = '962798627823'; // Example: 962799123456
+
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const subject = document.getElementById('subject').value.trim();
+    const message = document.getElementById('message').value.trim();
+
+    const text = `Hello, my name is ${name}.%0AEmail: ${email}%0ASubject: ${subject}%0A%0A${message}`;
+
+    const whatsappUrl = `https://wa.me/${phoneNumber}?text=${text}`;
+
+    window.open(whatsappUrl, '_blank');
+});
+</script>

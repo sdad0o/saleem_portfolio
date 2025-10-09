@@ -7,36 +7,37 @@
 
         <div class="about-content">
             <div class="about-text">
-                <p>Hello! I'm {{ $profile->name }}, a passionate {{ strtolower($profile->title) }} who loves creating seamless user experiences.</p>
-                <p>{{ $profile->description }}</p>
+                <p>{{ $about->description ?? 'Write something about yourself here...' }}</p>
 
                 <div class="about-stats">
+                    @if($about)
                     <div class="stat-item">
-                        <h3>50+</h3>
-                        <p>Projects Completed</p>
+                        <h3>{{ $about->stat_1_value }}</h3>
+                        <p>{{ $about->stat_1_label }}</p>
                     </div>
                     <div class="stat-item">
-                        <h3>5+</h3>
-                        <p>Years Experience</p>
+                        <h3>{{ $about->stat_2_value }}</h3>
+                        <p>{{ $about->stat_2_label }}</p>
                     </div>
                     <div class="stat-item">
-                        <h3>30+</h3>
-                        <p>Happy Clients</p>
+                        <h3>{{ $about->stat_3_value }}</h3>
+                        <p>{{ $about->stat_3_label }}</p>
                     </div>
                     <div class="stat-item">
-                        <h3>15+</h3>
-                        <p>Technologies</p>
+                        <h3>{{ $about->stat_4_value }}</h3>
+                        <p>{{ $about->stat_4_label }}</p>
                     </div>
+                    @endif
                 </div>
             </div>
 
-            <div class="skills-grid">
-                @foreach($skills as $skill)
-                <div class="skill-item">
-                    <i class="{{ $skill->icon_class }}"></i>
-                    <h4>{{ $skill->name }}</h4>
-                </div>
-                @endforeach
+        <div class="skills-grid">
+            @foreach($skills as $skill)
+            <div class="skill-item">
+                <i class="{{ $skill->icon_class }}"></i>
+                <h4>{{ $skill->name }}</h4>
             </div>
+            @endforeach
+        </div>
         </div>
     </section>

@@ -6,13 +6,19 @@
                 <h2>{{ $profile->title ?? 'Full Stack Developer & Designer' }}</h2>
                 <p>{{ $profile->description ?? 'I create exceptional digital experiences...' }}</p>
                 <div class="cta-buttons">
-                    <a href="#projects" class="btn btn-primary">View My Work</a>
+                    <a href="#experience" class="btn btn-primary">View My experience</a>
                     <a href="#contact" class="btn btn-secondary">Get In Touch</a>
                 </div>
             </div>
             <div class="hero-image">
                 <div class="hero-image-circle">
+                    @if($profile && $profile->image)
+                    <img src="{{ asset('storage/' . $profile->image) }}"
+                        alt="{{ $profile->name }}"
+                        style="width: 400px; height:400px; border-radius:50%; object-fit:cover;">
+                    @else
                     <i class="fas fa-laptop-code"></i>
+                    @endif
                 </div>
             </div>
         </div>
